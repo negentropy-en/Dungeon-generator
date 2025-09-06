@@ -1,7 +1,7 @@
 # Weekly Report 1
 
-**Week period:**  
-**Time spent (hours):**  
+**Week period:36th**  
+**Time spent (hours):10**  
 
 ## What did I do this week?
 - This week I started planning the selected subject and what the restraints as well as the limitations would be with it. Most of the time was spent on researching Delaunay's algorithm, reading course material, searching other suitable algorithms and literature. Also, started configuring about the project management tools, mainly Poetry, regarding the test coverage dependencies. 
