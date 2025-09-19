@@ -1,0 +1,24 @@
+[MASTER]
+ignore=venv,.venv,build,dist,assets,.vscode
+jobs=0
+extension-pkg-allow-list=numpy,pygame
+
+[TYPECHECK]
+# If you DON'T install the viewer extras, uncomment the next line to silence pygame import errors:
+# ignored-modules=pygame
+
+[FORMAT]
+max-line-length=100
+
+[BASIC]
+good-names=i,j,k,x,y,w,h,dx,dy,u,v,p,ax,ay,bx,by,cx,cy,rx,ry
+
+[DESIGN]
+max-args=10
+max-locals=25
+max-attributes=12
+
+[MESSAGES CONTROL]
+disable=
+    missing-docstring,
+    too-few-public-methods

@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "dungeon-generator"
+version = "0.1.0"
+description = "Procedural dungeon generator and visualizer (rooms and corridors) with optional Pygame viewer."
+authors = ["negentropy-en <patrick.r.o.grahn@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "dungeon_generator", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.13,<3.14"
+matplotlib = "^3.9.0"
+
+[tool.poetry.group.viewer.dependencies]
+pygame = "^2.6.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2"
+ruff = "^0.6"
+black = "^24.8"
+pylint = "^3.2"
+
+[tool.poetry.scripts]
+dungeon = "dungeon_generator.main:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

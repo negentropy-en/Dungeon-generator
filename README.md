@@ -5,8 +5,10 @@ A Python implementation of a procedural dungeon generator using Delaunay triangu
 
 ## Features
 
-- Tbd
+PNG rendering with Matplotlib and an optional interactive explorer built with Pygame.
 
-## Installation
+- tbd image creation and Pygame viewer
 
-- Tbd
+## Installation & Usage
+
+This project is managed with [Poetry](https://python-poetry.org/).
