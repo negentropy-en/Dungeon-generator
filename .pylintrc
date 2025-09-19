@@ -4,7 +4,6 @@ jobs=0
 extension-pkg-allow-list=numpy,pygame
 
 [TYPECHECK]
-# If you DON'T install the viewer extras, uncomment the next line to silence pygame import errors:
 # ignored-modules=pygame
 
 [FORMAT]
