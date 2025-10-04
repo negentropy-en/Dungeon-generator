@@ -1,15 +1,28 @@
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
-def visualize_dungeon(rooms, corridors, triangulation=None, width=100, height=100):
+# Visualization module for generating dungeon map images.
+
+def visualize_dungeon(rooms, corridors, triangulation=None, width=100, height=100):     # Generating and saving the visualization of the dungeon
+    # rooms: List of Room objects to visualize
+    # corridors: List of corridor paths (lists of coordinate tuples)
+    # triangulation: Optional DelaunayTriangulation object to overlay
+    # width: Dungeon width for plot bounds
+    # height: Dungeon height for plot bounds
+
     fig, ax = plt.subplots(figsize=(12, 12))
     ax.set_facecolor("black")
 
-    # Plot Delaunay triangulation (optional)
+    # Plot Delaunay triangulation
     if triangulation:
-        for t in triangulation.triangles:
-            v = t.vertices
-            pts = [(v[0].x, v[0].y), (v[1].x, v[1].y), (v[2].x, v[2].y), (v[0].x, v[0].y)]
+        for triangle in triangulation.triangles:
+            vertices = triangle.vertices
+            pts = [
+                (vertices[0].x, vertices[0].y),
+                (vertices[1].x, vertices[1].y),
+                (vertices[2].x, vertices[2].y),
+                (vertices[0].x, vertices[0].y)
+            ]
             ax.plot(*zip(*pts), color="blue", linestyle=":", alpha=0.4)
 
     # Plot corridors
@@ -21,10 +34,28 @@ def visualize_dungeon(rooms, corridors, triangulation=None, width=100, height=10
 
     # Plot rooms
     for room in rooms:
-        ax.add_patch(Rectangle((room.x, room.y), room.width, room.height,
-                               fill=True, color="darkslateblue", edgecolor="black", alpha=0.9))
-        ax.text(room.center.x, room.center.y, str(room.id), color='white',
-                ha='center', va='center', fontsize=8)
+        ax.add_patch(
+            Rectangle(
+                (room.x, room.y),
+                room.width,
+                room.height,
+                fill=True,
+                facecolor="darkslateblue",
+                edgecolor="white",
+                linewidth=1,
+                alpha=0.9
+            )
+        )
+        # Room IDs on top of everything for easy identification
+        ax.text(
+            room.center.x,
+            room.center.y,
+            str(room.id),
+            color='white',
+            ha='center',
+            va='center',
+            fontsize=8
+        )
 
     ax.set_xlim(0, width)
     ax.set_ylim(0, height)
