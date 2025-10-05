@@ -146,6 +146,9 @@ env.bak/
 venv.bak/
 .venv/
 
+# Custom words that don't want in the repo
+.vscode/
+
 #Output
 results/
 dungeon.png

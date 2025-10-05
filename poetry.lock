@@ -804,7 +804,7 @@ version = "2.6.1"
 description = "Python Game Development"
 optional = false
 python-versions = ">=3.6"
-groups = ["viewer"]
+groups = ["main", "viewer"]
 files = [
     {file = "pygame-2.6.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:9beeb647e555afb5657111fa83acb74b99ad88761108eaea66472e8b8547b55b"},
     {file = "pygame-2.6.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:10e3d2a55f001f6c0a6eb44aa79ea7607091c9352b946692acedb2ac1482f1c9"},
@@ -1015,4 +1015,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13,<3.14"
-content-hash = "168d263dfd0f2b0ef635b43db81be74b5789cfddfb8d0cddce6ec582493c413c"
+content-hash = "ecdbcd5e5098095d27ba4e79aa087505af3c9a82831815638dcbbbe8abb800bd"

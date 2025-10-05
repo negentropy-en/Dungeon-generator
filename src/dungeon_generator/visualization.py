@@ -23,14 +23,14 @@ def visualize_dungeon(rooms, corridors, triangulation=None, width=100, height=10
                 (vertices[2].x, vertices[2].y),
                 (vertices[0].x, vertices[0].y)
             ]
-            ax.plot(*zip(*pts), color="blue", linestyle=":", alpha=0.4)
+            ax.plot(*zip(*pts), color="blue", linestyle=":", alpha=0.4, zorder=1)
 
     # Plot corridors
     for corridor in corridors:
         for i in range(len(corridor) - 1):
             x1, y1 = corridor[i]
             x2, y2 = corridor[i + 1]
-            ax.plot([x1, x2], [y1, y2], color="gray", linewidth=2)
+            ax.plot([x1, x2], [y1, y2], color="gray", linewidth=2, zorder=2)
 
     # Plot rooms
     for room in rooms:
@@ -43,7 +43,8 @@ def visualize_dungeon(rooms, corridors, triangulation=None, width=100, height=10
                 facecolor="darkslateblue",
                 edgecolor="white",
                 linewidth=1,
-                alpha=0.9
+                alpha=0.9,
+                zorder=3
             )
         )
         # Room IDs on top of everything for easy identification
@@ -54,7 +55,8 @@ def visualize_dungeon(rooms, corridors, triangulation=None, width=100, height=10
             color='white',
             ha='center',
             va='center',
-            fontsize=8
+            fontsize=8,
+            zorder=4
         )
 
     ax.set_xlim(0, width)

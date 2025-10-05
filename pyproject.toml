@@ -9,6 +9,7 @@ packages = [{ include = "dungeon_generator", from = "src" }]
 [tool.poetry.dependencies]
 python = ">=3.13,<3.14"
 matplotlib = "^3.9.0"
+pygame = "^2.6.1"
 
 [tool.poetry.group.viewer.dependencies]
 pygame = "^2.6.0"
