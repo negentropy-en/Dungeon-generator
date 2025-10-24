@@ -3,14 +3,18 @@ from matplotlib.patches import Rectangle
 
 # Visualization module for generating dungeon map images.
 
-def visualize_dungeon(rooms, corridors, triangulation=None, width=100, height=100):     # Generating and saving the visualization of the dungeon
+
+def visualize_dungeon(
+    rooms, corridors, triangulation=None, width=100, height=100
+):
     # rooms: List of Room objects to visualize
     # corridors: List of corridor paths (lists of coordinate tuples)
     # triangulation: Optional DelaunayTriangulation object to overlay
     # width: Dungeon width for plot bounds
     # height: Dungeon height for plot bounds
 
-    fig, ax = plt.subplots(figsize=(12, 12))
+    # We only use 'ax', so 'fig' is marked as unused with '_'
+    _, ax = plt.subplots(figsize=(12, 12))
     ax.set_facecolor("black")
 
     # Plot Delaunay triangulation
@@ -21,7 +25,7 @@ def visualize_dungeon(rooms, corridors, triangulation=None, width=100, height=10
                 (vertices[0].x, vertices[0].y),
                 (vertices[1].x, vertices[1].y),
                 (vertices[2].x, vertices[2].y),
-                (vertices[0].x, vertices[0].y)
+                (vertices[0].x, vertices[0].y),
             ]
             ax.plot(*zip(*pts), color="blue", linestyle=":", alpha=0.4, zorder=1)
 
@@ -44,7 +48,7 @@ def visualize_dungeon(rooms, corridors, triangulation=None, width=100, height=10
                 edgecolor="white",
                 linewidth=1,
                 alpha=0.9,
-                zorder=3
+                zorder=3,
             )
         )
         # Room IDs on top of everything for easy identification
@@ -52,17 +56,18 @@ def visualize_dungeon(rooms, corridors, triangulation=None, width=100, height=10
             room.center.x,
             room.center.y,
             str(room.id),
-            color='white',
-            ha='center',
-            va='center',
+            color="white",
+            ha="center",
+            va="center",
             fontsize=8,
-            zorder=4
+            zorder=4,
         )
 
     ax.set_xlim(0, width)
     ax.set_ylim(0, height)
     ax.set_aspect("equal")
-    ax.set_title("Procedural Dungeon (Delaunay + MST)")
+    ax.set.title("Procedural Dungeon (Delaunay + MST)")
     plt.savefig("dungeon.png", dpi=150, bbox_inches="tight")
     print("Dungeon map saved to dungeon.png")
     plt.show()
+    

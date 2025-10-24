@@ -6,11 +6,11 @@ I am taking this course in the Bachelor's in Computer Science (TKT) program.
 
 ## Subject and implementation
 
-In my project, I am implementing a procedural dungeon generator that creates randomized maps through a staged algorithmic pipeline. The core algorithm is Delaunay triangulation (via the Bowyer-Watson method), which establishes a robust spatial relationships between rooms before corridors are created. 
+The project generates connected, reproducible dungeon maps made of non-overlapping rectangular rooms and orthogonal corridors. Generation runs as a simple pipeline: rooms are sampled and placed inside an inner margin with one-tile padding from the outer border, ensuring they never touch the edge; room centers are triangulated with Bowyer–Watson; a minimum spanning tree (Kruskal) selects the corridors that guarantee connectivity; L-shaped grid routes are laid between connected rooms; finally, rooms and corridors are rasterized onto a grid used for rendering and pathfinding.
 
-The dungeon generation process proceeds in multiple phases. . . to be continued when the project starts to shape out.
+The command-line interface has two modes. “Generate” builds a dungeon and writes a PNG image; “game” opens a small Pygame viewer where you can regenerate with R and quit with Esc. Both modes accept --rooms and --seed. The data model is intentionally minimal: rooms with positions and centers, triangles for connectivity, corridor polylines as grid coordinates, and a 2D integer grid where 1 = floor and 0 = wall.
 
-Bowyer-Watson implementation behaves approximately in O(n^2) for n rooms. Kruskal's algorithm runs in O(n log n) over triangulation edges. 
+Performance is practical for up to ~100 rooms: room placement is quadratic in the worst case, triangulation is near n log ⁡n in practice, Kruskal is n log n, and rasterization is linear in room area plus corridor length. Correctness is enforced with invariants (in-bounds, non-overlap, connectivity) and automated tests, including failure paths and an A* smoke test. Linting keeps the code tidy.
 
 ## Programming languages
 
@@ -29,4 +29,4 @@ For this project, I'm using the following as source material:
 - [Kruskal’s algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Kruskal%27s_algorithm)
 - [A* search algorithm (Wikipedia)](https://en.wikipedia.org/wiki/A*_search_algorithm)
 - [Bowyer-Watson algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm)
-- More to be added as the project progresses. 
+- [Bresenham's line algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
