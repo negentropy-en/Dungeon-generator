@@ -1,20 +1,10 @@
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
-# Visualization module for generating dungeon map images.
-
-
 def visualize_dungeon(
     rooms, corridors, triangulation=None, width=100, height=100
 ):
-    # rooms: List of Room objects to visualize
-    # corridors: List of corridor paths (lists of coordinate tuples)
-    # triangulation: Optional DelaunayTriangulation object to overlay
-    # width: Dungeon width for plot bounds
-    # height: Dungeon height for plot bounds
-
-    # We only use 'ax', so 'fig' is marked as unused with '_'
-    _, ax = plt.subplots(figsize=(12, 12))
+    fig, ax = plt.subplots(figsize=(12, 12))
     ax.set_facecolor("black")
 
     # Plot Delaunay triangulation
@@ -51,7 +41,7 @@ def visualize_dungeon(
                 zorder=3,
             )
         )
-        # Room IDs on top of everything for easy identification
+        # Room IDs
         ax.text(
             room.center.x,
             room.center.y,
@@ -66,8 +56,7 @@ def visualize_dungeon(
     ax.set_xlim(0, width)
     ax.set_ylim(0, height)
     ax.set_aspect("equal")
-    ax.set.title("Procedural Dungeon (Delaunay + MST)")
+    ax.set_title("Procedural Dungeon (Delaunay + MST)")
     plt.savefig("dungeon.png", dpi=150, bbox_inches="tight")
     print("Dungeon map saved to dungeon.png")
     plt.show()
-    
