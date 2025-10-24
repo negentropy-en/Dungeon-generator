@@ -12,10 +12,13 @@ A Python implementation of a procedural dungeon generator using Delaunay triangu
 ## Installation
 This project is managed with [Poetry](https://python-poetry.org/).
 
-## Install necessary dependencies using command:
+## Install necessary dependencies using command
+```bash
 poetry install 
+```
 
 ## Command line functions and Usage
+```bash
 poetry run dungeon --help
 poetry run dungeon --generate            # create PNG (non-interactive)
 poetry run dungeon --generate --rooms 50 # exactly 50 rooms
@@ -23,15 +26,22 @@ poetry run dungeon --generate --seed 42  # reproducible
 
 poetry run dungeon --game                # open Pygame viewer
 poetry run dungeon --game --rooms 30     # viewer with fixed room count
+```
 
 ## Run tests with command:
+```bash
 poetry run pytest -v
+```
 
 ## Run coverage report with command:
+```bash
 poetry run coverage report -m
+```
 
 ## Run Pylint with command:
+```bash
 poetry run pylint src/dungeon_generator
+```
 
 ## User guide and overall generation
 
@@ -56,5 +66,6 @@ poetry run pylint src/dungeon_generator
 - Esc – quit the viewer (or close the window).
 
 ## Example workflows
-
+```bash
 poetry run dungeon --game --rooms 30
+```
