@@ -2,7 +2,7 @@
 
 ## Test coverage
 
-![Poetry Coverage](./docs/screenshots/coverage-report.png)
+![Poetry Coverage](/docs/screenshots/coverage-report.png)
 
 ## Testing
 
