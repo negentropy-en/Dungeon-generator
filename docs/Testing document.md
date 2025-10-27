@@ -8,26 +8,26 @@
 
 What has been tested and how:
 
-- Point Class - Basic 2D point functionality
+- Point Class - Basic 2D point functionality  
 Creation, equality, hashing, string representation\
 Used coordinate comparisons and set operations
 
-- Triangle and Delaunay Triangulation - Geometric algorithms
+- Triangle and Delaunay Triangulation - Geometric algorithms  
 Circumcircle calculations for different triangle types\
 Delaunay property validation\
 Bowyer-Watson algorithm implementation\
 Bresenham-style line utility is exercised
 
-- Room and Dungeon Generation - Core dungeon logic
+- Room and Dungeon Generation - Core dungeon logic  
 Room placement, intersection detection, bound checking\
 MST connectivity using Kruskal's algorithm\
 Grid generation and corridor creation
 
-- A* Pathfinding - Navigation system
+- A* Pathfinding - Navigation system  
 Pathfinding in open spaces, around obstacles, no-path scenarios\
 8-directional movement with proper cost calculation
 
-- Integration tests - System functionality
+- Integration tests - System functionality  
 Full dungeon generation to pathfinding pipeline\
 Seed-based reproducibility\
 Cross-room connectivity validation
