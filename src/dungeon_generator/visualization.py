@@ -4,7 +4,7 @@ from matplotlib.patches import Rectangle
 def visualize_dungeon(
     rooms, corridors, triangulation=None, width=100, height=100
 ):
-    fig, ax = plt.subplots(figsize=(12, 12))
+    _, ax = plt.subplots(figsize=(12, 12))
     ax.set_facecolor("black")
 
     # Plot Delaunay triangulation

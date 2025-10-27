@@ -61,6 +61,7 @@ class TestTriangle(unittest.TestCase):    # Testing Triangle class functionality
         center, radius = t.circumcircle
         self.assertAlmostEqual(center[0], 1.0, places=5)
         self.assertAlmostEqual(center[1], math.sqrt(3) / 3, places=5)
+        self.assertAlmostEqual(radius, 2 / math.sqrt(3), places=5)
     
     def test_degenerate_triangle(self):   # Test circumcircle for degenerate triangle (collinear points)
         p1 = Point(0, 0)
@@ -140,7 +141,7 @@ class TestDelaunayTriangulation(unittest.TestCase):    # Testing Delaunay triang
                 if point not in triangle.vertices:
                     self.assertFalse(
                         triangle.in_circumcircle(point),
-                        f"Delaunay property violated: {point} inside circumcircle"
+                        f"Delaunay triangulation invalid: {point} inside circumcircle"
                     )
 
 class TestRoom(unittest.TestCase):  #  Testing Room class functionality
@@ -544,3 +545,6 @@ class TestEdgeCases(unittest.TestCase):  # Testing edge cases in dungeon generat
         rooms, _, _, _, grid = gen.generate()
         
         self.assertGreater(len(rooms), 0)
+        self.assertIsNotNone(grid)
+        self.assertEqual(len(grid), 30)
+        self.assertEqual(len(grid[0]), 30)

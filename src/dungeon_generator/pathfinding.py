@@ -103,4 +103,3 @@ class AStarPathfinder:
             path.append((node.x, node.y))
             node = node.parent
         return list(reversed(path))
-    

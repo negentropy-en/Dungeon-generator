@@ -124,4 +124,3 @@ class DelaunayTriangulation:  # Delaunay triangulation using Bowyer-Watson
         self.triangles = [
             t for t in self.triangles if not any(v in st_vertices for v in t.vertices)
         ]
-        

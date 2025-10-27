@@ -214,4 +214,3 @@ class DungeonExplorer:
             self.draw()
         pygame.quit()
         sys.exit()
-        

@@ -82,7 +82,7 @@ def run_game(rooms=None):
         print(f"An error occurred while running the game: {e}")
 
 
-def main():
+def main(): # Added helper text for usage examples
     parser = argparse.ArgumentParser(
         description="Procedural Dungeon Generator",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -137,4 +137,3 @@ Examples:
 
 if __name__ == "__main__":
     main()
-    

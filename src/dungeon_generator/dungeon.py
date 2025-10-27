@@ -296,4 +296,3 @@ class DungeonGenerator:  # Main dungeon generator class
         )
 
         return self.rooms, self.corridors, self.doors, self.triangulation, self.grid
-    
