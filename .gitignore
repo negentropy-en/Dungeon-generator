@@ -45,7 +45,7 @@ site/
 dungeon.png
 results/
 
-docs/screenshots/
+#docs/screenshots/
 
 .DS_Store
 
