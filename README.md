@@ -10,10 +10,10 @@ A Python implementation of a procedural dungeon generator using Delaunay triangu
 - Command-line interface: Choose generation mode and room count.
 
 ## Documentation
-- [Specification Document](docs/Specification_document.md)
-- [Implementation Document](docs/Implementation_document.md)
-- [Testing Document](docs/Testing_document.md)
-- [User Guide](docs/User_guide.md)
+- [Specification Document](docs/Specification%20document.md)
+- [Implementation Document](docs/Implementation%20document.md)
+- [Testing Document](docs/Testing%20document.md)
+- [User Guide](docs/User%20guide.md)
 - [Weekly Reports](docs/weekly_reports/)
 
 ## Installation
