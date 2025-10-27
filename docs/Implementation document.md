@@ -36,7 +36,7 @@
 - Comprehensive testing for all parts; visualization, game interface, error handling, performance testing, and user interface testing.
 
 ## Use of Large Language Models (LLMs)
-- In this project LLMs (OpenAI ChatGPT 5 model) were used to narrow down the subject from the original aspect, describe possible error messages/handling/debugging, fetched guidelines how to utilize pylint and poetry.
+- In this project LLMs (OpenAI ChatGPT 5 model) were used to narrow down the subject from the original aspect, describe possible error messages/handling/debugging, fetched guidelines how to utilize pylint and poetry as well as documentation structure.
 
 ## Sources
 
